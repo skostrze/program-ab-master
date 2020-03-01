@@ -1,0 +1,50 @@
+package org.alicebot.ab.utils;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import org.alicebot.ab.MagicStrings;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
+public class IOUtils {
+	private static final Logger log = LoggerFactory.getLogger(IOUtils.class);
+
+	public static String readInputTextLine() {
+        
+            String textLine = null;
+            try {
+                BufferedReader lineOfText = new BufferedReader(new InputStreamReader(System.in, MagicStrings.UTF8));
+                textLine = lineOfText.readLine();
+            } catch (IOException e) {
+                    e.printStackTrace();
+            }
+            return textLine;
+	}
+
+
+	public static String system(String evaluatedContents, String failedString) {
+		Runtime rt = Runtime.getRuntime();
+        log.info("System {}", evaluatedContents);
+        try {
+            Process p = rt.exec(evaluatedContents);
+            InputStream istrm = p.getInputStream();
+            InputStreamReader istrmrdr = new InputStreamReader(istrm, MagicStrings.UTF8);
+            BufferedReader buffrdr = new BufferedReader(istrmrdr);
+            String result = "";
+            String data = "";
+            while ((data = buffrdr.readLine()) != null) {
+                result += data+"\n";
+            }
+            log.info("Result = {}", result);
+            return result;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return failedString;
+        }
+	}
+}
+
