@@ -50,7 +50,7 @@ Added support of polish langage, using dictionary from morfologik stemming. Supp
 
     
     
-## TODO
+## TODO 
 
 1. Build entirely with Maven, without embedded JARs in project sources [done]
 2. Replace System.out.println with SLF4J logging [done]
