@@ -50,4 +50,4 @@ Added support of polish langage, using dictionary from morfologik stemming. Supp
 
     
     
-## TODO 
+## TODO
