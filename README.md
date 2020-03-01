@@ -1,6 +1,9 @@
-# Program AB: Hendy's fork
+# Program AB: Sprint's fork
 
 Fork of [Program AB](http://alicebot.blogspot.co.id/2013/01/program-ab-aiml-20-reference.html), the reference implementation of the AIML 2.0 draft specification. AIML is a widely adopted standard for creating chat bots and mobile virtual assistants like ALICE, Mitsuku, English Tutor, The Professor, S.U.P.E.R. and many more.
+
+Added support of polish langage, using dictionary from morfologik stemming. Supports enable or disable Polish diacritical marks in AIML file.   
+
 
 ## Usage - Use Soluvas's Repository
 
@@ -23,23 +26,11 @@ Fork of [Program AB](http://alicebot.blogspot.co.id/2013/01/program-ab-aiml-20-r
         <dependency>
             <groupId>org.alicebot.ab</groupId>
             <artifactId>ab</artifactId>
-            <version>4.0.4-SNAPSHOT</version>
+            <version>4.0.5_SPRINT</version>
         </dependency>
     </dependencies>
 
-### In Gradle project
-
-    repositories {
-        maven {
-            url 'http://nexus.bippo.co.id/nexus/content/repositories/soluvas-public-snapshots/'
-        }
-    }
-
-    dependencies {
-
-        compile 'org.alicebot.ab:ab:4.0.4-SNAPSHOT'
-
-    }
+#
 
 ## Usage - Build Yourself
 
@@ -53,17 +44,11 @@ Fork of [Program AB](http://alicebot.blogspot.co.id/2013/01/program-ab-aiml-20-r
             <dependency>
                 <groupId>org.alicebot.ab</groupId>
                 <artifactId>ab</artifactId>
-                <version>4.0.4-SNAPSHOT</version>
+                <version>4.0.5_SPRINT</version>
             </dependency>
         </dependencies>
 
-    or Gradle project:
-
-        dependencies {
-
-            compile 'org.alicebot.ab:ab:4.0.4-SNAPSHOT'
-
-        }
+    
     
 ## TODO
 
