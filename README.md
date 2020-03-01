@@ -2,7 +2,9 @@
 
 Fork of [Program AB](http://alicebot.blogspot.co.id/2013/01/program-ab-aiml-20-reference.html), the reference implementation of the AIML 2.0 draft specification. AIML is a widely adopted standard for creating chat bots and mobile virtual assistants like ALICE, Mitsuku, English Tutor, The Professor, S.U.P.E.R. and many more.
 
-Added support of polish langage, using dictionary from morfologik stemming. Supports enable or disable Polish diacritical marks in AIML file.   
+Added support of polish langage, using dictionary from morfologik stemming. 
+Supports enable or disable Polish diacritical marks in AIML file. 
+Cust jar plugin execution 
 
 
 ## Usage - Use Soluvas's Repository
