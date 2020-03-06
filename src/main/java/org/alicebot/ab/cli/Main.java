@@ -58,7 +58,7 @@ public class Main {
         mainFunction(args);
     }
     public static void mainFunction (String[] args) {
-        String botName = "windykacja";
+        String botName = "vectra";
         String action = "chat";
         log.info(MagicStrings.programNameVersion);                
         
