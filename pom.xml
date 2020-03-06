@@ -63,14 +63,8 @@
                 <groupId>com.vaadin.external.google</groupId>
                 <artifactId>android-json</artifactId>
                 <version>0.0.20131108.vaadin1</version>
-            </dependency>	    	   
+            </dependency>	    	                          
             
-            <!-- CUTOM -->
-            <dependency>
-                    <groupId>pl.sprint.validator</groupId>
-                    <artifactId>validator</artifactId>
-                    <version>1.0</version>
-            </dependency>
             <!-- morfologik -->
             <dependency>
                 <groupId>org.carrot2</groupId>
