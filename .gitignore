@@ -2,6 +2,7 @@
 bin
 target
 *.class
+/logs
 
 # Package Files #
 *.jar
