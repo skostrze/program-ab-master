@@ -4,7 +4,7 @@ Fork of [Program AB](http://alicebot.blogspot.co.id/2013/01/program-ab-aiml-20-r
 
 Added support of polish langage, using dictionary from morfologik stemming. 
 Supports enable or disable Polish diacritical marks in AIML file. 
-Cust jar plugin execution 
+Custom jar plugin execution 
 
 
 ## Usage - Use Soluvas's Repository
