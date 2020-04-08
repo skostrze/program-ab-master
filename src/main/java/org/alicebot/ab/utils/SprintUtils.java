@@ -17,13 +17,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
+ * Custom methods for polish language and jar plugin call. 
  * @author skost
  */
 public class SprintUtils {
     private static final Logger log = LoggerFactory.getLogger(SprintUtils.class);
     
-    
+    /**
+     * Replace polish marks in string.
+     * @param src
+     * @param isPolishMarks
+     * @return 
+     */
     public static String unaccent(String src, boolean isPolishMarks) 
     {
         String temp = src;
@@ -41,6 +46,15 @@ public class SprintUtils {
         return temp;
     }  
     
+    /**
+     * Java jar integration method. 
+     * @param file jar file url
+     * @param classLoad class name
+     * @param methodName method name
+     * @param parameter parameter to send 
+     * @param sessionId sessionid
+     * @return plugin reponse
+     */
     public static String callPlugin(String file, String classLoad, String methodName, String parameter, String sessionId)
     {
         //"pl.sprint.chatbot.ext.Test"
@@ -84,7 +98,13 @@ public class SprintUtils {
     }
     
     
-    
+    /**
+     * Deprecated method to call bash script, changed to jar callPlugin.
+     * @param scrip
+     * @param parameters
+     * @return 
+     */
+    @Deprecated
     public static String readBashScript(String scrip, String parameters)
     {                
         String out = "";
