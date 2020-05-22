@@ -7,32 +7,6 @@ Supports enable or disable Polish diacritical marks in AIML file.
 Custom jar plugin execution 
 
 
-## Usage - Use Soluvas's Repository
-
-### In Maven project
-
-    <repositories>
-        <repository>
-            <id>soluvas-public-snapshots</id>
-            <url>http://nexus.bippo.co.id/nexus/content/repositories/soluvas-public-snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.alicebot.ab</groupId>
-            <artifactId>ab</artifactId>
-            <version>4.0.5_SPRINT</version>
-        </dependency>
-    </dependencies>
-
-#
 
 ## Usage - Build Yourself
 
