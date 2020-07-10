@@ -110,5 +110,48 @@ public class Contact {
         this.birthday = birthday;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 37 * hash + (this.contactId != null ? this.contactId.hashCode() : 0);
+        hash = 37 * hash + (this.displayName != null ? this.displayName.hashCode() : 0);
+        hash = 37 * hash + (this.birthday != null ? this.birthday.hashCode() : 0);
+        hash = 37 * hash + (this.phones != null ? this.phones.hashCode() : 0);
+        hash = 37 * hash + (this.emails != null ? this.emails.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Contact other = (Contact) obj;
+        if ((this.contactId == null) ? (other.contactId != null) : !this.contactId.equals(other.contactId)) {
+            return false;
+        }
+        if ((this.displayName == null) ? (other.displayName != null) : !this.displayName.equals(other.displayName)) {
+            return false;
+        }
+        if ((this.birthday == null) ? (other.birthday != null) : !this.birthday.equals(other.birthday)) {
+            return false;
+        }
+        if (this.phones != other.phones && (this.phones == null || !this.phones.equals(other.phones))) {
+            return false;
+        }
+        if (this.emails != other.emails && (this.emails == null || !this.emails.equals(other.emails))) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+
 
 }

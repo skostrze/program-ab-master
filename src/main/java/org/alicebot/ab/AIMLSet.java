@@ -149,4 +149,47 @@ public class AIMLSet extends HashSet<String> {
 
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 97 * hash + (this.setName != null ? this.setName.hashCode() : 0);
+        hash = 97 * hash + this.maxLength;
+        hash = 97 * hash + (this.host != null ? this.host.hashCode() : 0);
+        hash = 97 * hash + (this.botid != null ? this.botid.hashCode() : 0);
+        hash = 97 * hash + (this.isExternal ? 1 : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final AIMLSet other = (AIMLSet) obj;
+        if (this.maxLength != other.maxLength) {
+            return false;
+        }
+        if (this.isExternal != other.isExternal) {
+            return false;
+        }
+        if ((this.setName == null) ? (other.setName != null) : !this.setName.equals(other.setName)) {
+            return false;
+        }
+        if ((this.host == null) ? (other.host != null) : !this.host.equals(other.host)) {
+            return false;
+        }
+        if ((this.botid == null) ? (other.botid != null) : !this.botid.equals(other.botid)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+
 }

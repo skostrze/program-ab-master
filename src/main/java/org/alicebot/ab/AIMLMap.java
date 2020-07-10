@@ -168,4 +168,43 @@ public class AIMLMap extends HashMap<String, String> {
 
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + (this.mapName != null ? this.mapName.hashCode() : 0);
+        hash = 67 * hash + (this.host != null ? this.host.hashCode() : 0);
+        hash = 67 * hash + (this.botid != null ? this.botid.hashCode() : 0);
+        hash = 67 * hash + (this.isExternal ? 1 : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final AIMLMap other = (AIMLMap) obj;
+        if (this.isExternal != other.isExternal) {
+            return false;
+        }
+        if ((this.mapName == null) ? (other.mapName != null) : !this.mapName.equals(other.mapName)) {
+            return false;
+        }
+        if ((this.host == null) ? (other.host != null) : !this.host.equals(other.host)) {
+            return false;
+        }
+        if ((this.botid == null) ? (other.botid != null) : !this.botid.equals(other.botid)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+
 }

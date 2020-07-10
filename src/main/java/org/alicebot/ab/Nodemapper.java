@@ -44,6 +44,64 @@ public class Nodemapper {
         id = idCnt++;
     }*/
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 71 * hash + (this.category != null ? this.category.hashCode() : 0);
+        hash = 71 * hash + this.height;
+        hash = 71 * hash + (this.starBindings != null ? this.starBindings.hashCode() : 0);
+        hash = 71 * hash + (this.map != null ? this.map.hashCode() : 0);
+        hash = 71 * hash + (this.key != null ? this.key.hashCode() : 0);
+        hash = 71 * hash + (this.value != null ? this.value.hashCode() : 0);
+        hash = 71 * hash + (this.shortCut ? 1 : 0);
+        hash = 71 * hash + (this.sets != null ? this.sets.hashCode() : 0);
+        hash = 71 * hash + (this.dics != null ? this.dics.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Nodemapper other = (Nodemapper) obj;
+        if (this.height != other.height) {
+            return false;
+        }
+        if (this.shortCut != other.shortCut) {
+            return false;
+        }
+        if ((this.key == null) ? (other.key != null) : !this.key.equals(other.key)) {
+            return false;
+        }
+        if (this.category != other.category && (this.category == null || !this.category.equals(other.category))) {
+            return false;
+        }
+        if (this.starBindings != other.starBindings && (this.starBindings == null || !this.starBindings.equals(other.starBindings))) {
+            return false;
+        }
+        if (this.map != other.map && (this.map == null || !this.map.equals(other.map))) {
+            return false;
+        }
+        if (this.value != other.value && (this.value == null || !this.value.equals(other.value))) {
+            return false;
+        }
+        if (this.sets != other.sets && (this.sets == null || !this.sets.equals(other.sets))) {
+            return false;
+        }
+        if (this.dics != other.dics && (this.dics == null || !this.dics.equals(other.dics))) {
+            return false;
+        }
+        return true;
+    }
+
+    
  }
 
 

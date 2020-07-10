@@ -765,4 +765,81 @@ public class Bot {
         }
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + (this.properties != null ? this.properties.hashCode() : 0);
+        hash = 59 * hash + (this.preProcessor != null ? this.preProcessor.hashCode() : 0);
+        hash = 59 * hash + (this.brain != null ? this.brain.hashCode() : 0);
+        hash = 59 * hash + (this.inputGraph != null ? this.inputGraph.hashCode() : 0);
+        hash = 59 * hash + (this.learnfGraph != null ? this.learnfGraph.hashCode() : 0);
+        hash = 59 * hash + (this.patternGraph != null ? this.patternGraph.hashCode() : 0);
+        hash = 59 * hash + (this.deletedGraph != null ? this.deletedGraph.hashCode() : 0);
+        hash = 59 * hash + (this.unfinishedGraph != null ? this.unfinishedGraph.hashCode() : 0);
+        hash = 59 * hash + (this.suggestedCategories != null ? this.suggestedCategories.hashCode() : 0);
+        hash = 59 * hash + (this.name != null ? this.name.hashCode() : 0);
+        hash = 59 * hash + (this.setMap != null ? this.setMap.hashCode() : 0);
+        hash = 59 * hash + (this.mapMap != null ? this.mapMap.hashCode() : 0);
+        hash = 59 * hash + (this.dicMap != null ? this.dicMap.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Bot other = (Bot) obj;
+        if ((this.name == null) ? (other.name != null) : !this.name.equals(other.name)) {
+            return false;
+        }
+        if (this.properties != other.properties && (this.properties == null || !this.properties.equals(other.properties))) {
+            return false;
+        }
+        if (this.preProcessor != other.preProcessor && (this.preProcessor == null || !this.preProcessor.equals(other.preProcessor))) {
+            return false;
+        }
+        if (this.brain != other.brain && (this.brain == null || !this.brain.equals(other.brain))) {
+            return false;
+        }
+        if (this.inputGraph != other.inputGraph && (this.inputGraph == null || !this.inputGraph.equals(other.inputGraph))) {
+            return false;
+        }
+        if (this.learnfGraph != other.learnfGraph && (this.learnfGraph == null || !this.learnfGraph.equals(other.learnfGraph))) {
+            return false;
+        }
+        if (this.patternGraph != other.patternGraph && (this.patternGraph == null || !this.patternGraph.equals(other.patternGraph))) {
+            return false;
+        }
+        if (this.deletedGraph != other.deletedGraph && (this.deletedGraph == null || !this.deletedGraph.equals(other.deletedGraph))) {
+            return false;
+        }
+        if (this.unfinishedGraph != other.unfinishedGraph && (this.unfinishedGraph == null || !this.unfinishedGraph.equals(other.unfinishedGraph))) {
+            return false;
+        }
+        if (this.suggestedCategories != other.suggestedCategories && (this.suggestedCategories == null || !this.suggestedCategories.equals(other.suggestedCategories))) {
+            return false;
+        }
+        if (this.setMap != other.setMap && (this.setMap == null || !this.setMap.equals(other.setMap))) {
+            return false;
+        }
+        if (this.mapMap != other.mapMap && (this.mapMap == null || !this.mapMap.equals(other.mapMap))) {
+            return false;
+        }
+        if (this.dicMap != other.dicMap && (this.dicMap == null || !this.dicMap.equals(other.dicMap))) {
+            return false;
+        }
+        return true;
+    }
+    
+    
+    
+    
+
 }
