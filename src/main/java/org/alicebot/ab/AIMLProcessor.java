@@ -436,6 +436,23 @@ public class AIMLProcessor
         if (varName != null) ps.vars.put(varName, value);
         return value;
     }
+    
+    /**
+     * gets all variables
+     * @param node  current XML parse node
+     * @param ps    AIML parse state
+     * @return      the result of the <getall> operation
+     */
+    
+    private static String getall(Node node, ParseState ps)
+    {
+        String result = "";        
+        for(String key: ps.chatSession.predicates.keySet())
+        {
+            result+= key + " = " + ps.chatSession.predicates.get(key) + "<br />";
+        }                
+        return result;
+    }
 
     /** get the value of an AIML predicate.
      * implements <get name="predicate"></get>  and <get var="varname"></get>
@@ -1085,7 +1102,7 @@ public class AIMLProcessor
         else if (nodeName.equals("set"))
             return set(node, ps);
         else if (nodeName.equals("get"))
-            return get(node, ps);
+            return get(node, ps);       
         else if (nodeName.equals("map"))  // AIML 2.0 -- see also <set> in pattern
             return map(node, ps);
         else if (nodeName.equals("bot"))
@@ -1098,6 +1115,8 @@ public class AIMLProcessor
             return vocabulary(node, ps);
         else if (nodeName.equals("program"))
             return program(node, ps);
+         else if(nodeName.equals("getall"))
+            return getall(node, ps); //slaw
         else if (nodeName.equals("date")) //slaw
             return date(node, ps);
         else if (nodeName.equals("plugin")) //slaw
