@@ -22,8 +22,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
-import java.util.logging.Level;
+import java.util.TreeMap;
 
 import org.alicebot.ab.utils.CalendarUtils;
 import org.alicebot.ab.utils.DomUtils;
@@ -63,7 +65,8 @@ public class AIMLProcessor
         for (int j = 0; j < children.getLength(); j++) {
             //log.info("CHILD: "+children.item(j).getNodeName());
             Node m = children.item(j);
-			String mName = m.getNodeName();
+            String mName = m.getNodeName();
+            
             if (mName.equals("#text")) {/*skip*/}
             else if (mName.equals("pattern")) pattern = DomUtils.nodeToString(m);
             else if (mName.equals("that")) that = DomUtils.nodeToString(m);
@@ -446,11 +449,23 @@ public class AIMLProcessor
     
     private static String getall(Node node, ParseState ps)
     {
-        String result = "";        
-        for(String key: ps.chatSession.predicates.keySet())
+        String result = "";            
+        String predicateName = getAttributeOrTagValue(node, ps, "name");         
+        Map<String, String> map = new TreeMap<String, String>(ps.chatSession.predicates); 
+        Set set2 = map.entrySet();
+        Iterator iterator2 = set2.iterator();
+        while(iterator2.hasNext()) 
         {
-            result+= key + " = " + ps.chatSession.predicates.get(key) + "<br />";
-        }                
+            Map.Entry me = (Map.Entry)iterator2.next();
+            String key = (String)me.getKey();
+            if(predicateName != null && predicateName.length() > 0)
+            {
+                if(key.contains(predicateName))                
+                    result+= me.getKey() + " = " + me.getValue() + "<br />";                
+            }
+            else            
+                result+= me.getKey() + " = " + me.getValue() + "<br />";
+        }
         return result;
     }
 
